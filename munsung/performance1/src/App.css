@@ -1,0 +1,30 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 25px;
+  margin-bottom: 1rem;
+  color: rgb(68, 68, 68);
+  padding-bottom: 15px;
+  border-bottom: 2px solid #6e6e6e;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+}
