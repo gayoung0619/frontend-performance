@@ -1,8 +1,13 @@
-import React, {useEffect, useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import { useQuery } from "@tanstack/react-query";
 import {getSchoolList} from "../api/school";
 import styled from "styled-components";
 import { useWindowScroll, useWindowSize } from "react-use";
+
+type SchoolData = {
+  id: number,
+  name: string
+}
 
 const SchoolSelector = () => {
   const itemHeight = 100;
@@ -48,7 +53,7 @@ const SchoolSelector = () => {
         ) : (
             <SchoolList ref={scrollRef} style={{height: `${containerHeight}px`}}>
               <div style={{ transform : `translateY(${translateY}px)` }}>
-                {visibleItem?.map((ele, idx) => (
+                {visibleItem?.map((ele: SchoolData, idx: number) => (
                     <div
                         key={idx}
                         style={{

@@ -4,6 +4,7 @@ import App from './App.tsx'
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 async function enableMocking() {
+
   const { worker } = await import('./mocks/browser.ts')
  
   return worker.start()
