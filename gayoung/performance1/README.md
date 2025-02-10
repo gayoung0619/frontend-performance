@@ -43,7 +43,13 @@ visibleItem 추출
 - transform: translateY(${translateY}px)를 사용해 보이는 항목만 원하는 위치에 렌더링합니다.
 
 ## 🛠️성능 측정
-<div style="display: flex; gap: 5px;">
-  <img src="./src/assets/readme/개선전.png" alt="개선 전" width="300" />
-  <img src="./src/assets/readme/개선전.png" alt="개선 후" width="300" />
+<div style="display: flex; gap: 10px;">
+    <div>
+        <h4>개선전</h4>
+        <img src="./src/assets/readme/개선전.jpg" alt="개선 전" width="300" />
+    </div>
+    <div>
+        <h4>개선후</h4>
+        <img src="./src/assets/readme/개선후.jpg" alt="개선 후" width="300" />
+    </div>
 </div>
