@@ -1,0 +1,49 @@
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 768px;
+  margin-inline: auto;
+  flex: 1;
+  overflow: hidden;
+}
+
+.list {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.item {
+  padding-block: 20px;
+  font-size: 15px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.item:first-child {
+  border-top: 1px solid #e6e6e6;
+}
+
+.scroll-container {
+  width: 10px;
+  background-color: #e6e6e6;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.scroll {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background-color: #888888;
+  border-radius: 6px;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+}
