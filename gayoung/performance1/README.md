@@ -1,7 +1,7 @@
 # 🚀 가상스크롤(virtual-scroll)
 
 ## 📌 소개
-가상스크롤은 유저 입장에서 직접 보이는 요소들만 렌더링하고, 스크롤에 가려지는 부분은 렌더링 하지 않는 프론트엔드 최적화기법입니다. 그려야 하는 DOM의 개수가 수천, 수만단위가 넘어간다면 과부화가 생겨 무리가 갈 수 있습니다.DOM의
+가상스크롤은 유저 입장에서 직접 보이는 요소들만 렌더링하고, 스크롤에 가려지는 부분은 렌더링 하지 않는 프론트엔드 최적화기법입니다. 그려야 하는 DOM의 개수가 수천, 수만단위가 넘어간다면 과부화가 생겨 무리가 갈 수 있습니다.
 
 ## 🎯 목표
 - 가상스크롤을 위한 라이브러리가 많지만 (예: react-window, react-virtualized) 저희는 직접 개발해보았습니다.
@@ -43,13 +43,7 @@ visibleItem 추출
 - transform: translateY(${translateY}px)를 사용해 보이는 항목만 원하는 위치에 렌더링합니다.
 
 ## 🛠️성능 측정
-<div style="display: flex; gap: 10px;">
-    <div>
-        <h4>개선전</h4>
-        <img src="./src/assets/readme/개선전.jpg" alt="개선 전" width="300" />
-    </div>
-    <div>
-        <h4>개선후</h4>
-        <img src="./src/assets/readme/개선후.jpg" alt="개선 후" width="300" />
-    </div>
+<div style="gap: 10px;">
+        <img src="./src/assets/readme/개선전.jpg" alt="개선 전" style="width: 49%" />
+        <img src="./src/assets/readme/개선후.jpg" alt="개선 후" style="width: 49%" />
 </div>
