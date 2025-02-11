@@ -23,5 +23,5 @@
 
 
 ## 📂 프로젝트 리스트
-performance1 : 가상스크롤 (virtual-scroll)
-performance2 : 이미지 Lazyloading 
+- performance1 : 가상스크롤 (virtual-scroll)
+- performance2 : 이미지 Lazyloading 
