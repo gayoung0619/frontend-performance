@@ -1,50 +1,27 @@
-# React + TypeScript + Vite
+# 🚀 이미지 레이지로딩
+## ✏️ 개요
+최신 HTTP Archive data에 따라서, 이미지는 전체 페이지 크기에서 대략 45%를 차지합니다. 이미지를 웹 페이지를 없앨 수는 앖기 때문에, 이미지를 그대로 쓰면서 웹 페이지를 빠르게 로딩할 수 있는 방법을 찾아야합니다. 해당 레포지토리는 기존의 모든 이미지를 그대로 유지한 채 페이지 사이즈를 줄이고 페이지 로딩 시간을 향상시킬 수 있는 기술인 Images laze loading 기법에 대한 실습입니다.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 소개
+페이지 안에 있는 실제 이미지들이 화면에 보여질 필요가 있을 떄 로딩을 할 수 있도록 하는 테크닉. 바로 로딩이 아니라 로딩시점을 뒤로 미루는 기술입니다. 만약 사용자가 스크롤을 하지 않으면 보여지지 않은 이미지는 절대 로딩되지 않습니다.
 
-Currently, two official plugins are available:
+## 🎯 목표
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## 📂 주요 기술 및 라이브러리
+- react
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🛠️코드의 작동 원리
+1️⃣
+  
+2️⃣ 
+  
+3️⃣ 
 
-- Configure the top-level `parserOptions` property like this:
+4️⃣
+  
+5️⃣ 
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 🛠️성능 측정
+<div style="gap: 10px;">
+</div>
