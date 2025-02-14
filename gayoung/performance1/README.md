@@ -44,6 +44,7 @@ visibleItem 추출
 
 ## 🛠️성능 측정
 <div style="gap: 10px;">
-        <img src="./src/assets/readme/개선전.jpg" alt="개선 전" style="width: 49%" />
-        <img src="./src/assets/readme/개선후.jpg" alt="개선 후" style="width: 49%" />
+        <img src="./src/assets/readme/개선전.jpg" alt="개선 전" style="width: 30%" />
+        <img src="./src/assets/readme/개선중.jpg" alt="개선 중" style="width: 30%" />  
+        <img src="./src/assets/readme/개선후.jpg" alt="개선 후" style="width: 30%" />
 </div>
