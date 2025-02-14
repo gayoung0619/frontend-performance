@@ -43,8 +43,18 @@ visibleItem 추출
 - transform: translateY(${translateY}px)를 사용해 보이는 항목만 원하는 위치에 렌더링합니다.
 
 ## 🛠️성능 측정
-<div style="gap: 10px;">
+<div style="display: flex;gap: 10px;">
         <img src="./src/assets/readme/개선전.jpg" alt="개선 전" style="width: 30%" />
         <img src="./src/assets/readme/개선중.jpg" alt="개선 중" style="width: 30%" />  
         <img src="./src/assets/readme/개선후.jpg" alt="개선 후" style="width: 30%" />
 </div>
+
+### 📌 개선 과정
+- 1차개선: 가상스크롤 적용 **(28점 > 56점)**
+  - TBT: 15만개의 데이터가 화면에 렌더링 되기떄문에 이 시간동안 사용자는 웹페이지에 상호작용을 할 수 없습니다.
+  - 가상스크롤을 적용함으로써 TBT는 0ms로 측정되었지만 FCP LCP SpeedIndex 여전히 비슷한 수치를 나타냅니다.
+- 2차개선: 빌드 **(56점 > 95점)**
+  - 빌드과정에서 JS CSS 파일이 압축되고 주석 공백 불필요한코드가 제거되면서 파일 크기가 감소해 전송속도가 빨라집니다. 
+  - 초기 페이지 로드가 더 가벼워지므로 FCP, LCP가 개선이 되고 
+  - 압축된 코드로 시각적 콘텐츠가 빨리 채워짐으로써 Speed Index 수치도 올라가는걸 확인 할 수 있습니다.
+
