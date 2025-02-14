@@ -33,16 +33,16 @@ const SchoolSelector = () => {
     }
   }, []);
 
-  const containerHeight = (itemHeight + columnGap) * schoolList?.data.length
+  const containerHeight = (itemHeight + columnGap) * schoolList?.data?.length
   const startIndex = Math.max(
       Math.floor(relativeY / (itemHeight + columnGap)), 0
   )
   const endIndex = Math.min(
-      Math.ceil(height / (itemHeight + columnGap) + startIndex), schoolList?.data.length
+      Math.ceil(height / (itemHeight + columnGap) + startIndex), schoolList?.data?.length
   )
-  const visibleItem = schoolList?.data.slice(
+  const visibleItem = schoolList?.data?.slice(
       Math.max(startIndex, 0),
-      Math.min(endIndex + 1, schoolList?.data.length)
+      Math.min(endIndex + 1, schoolList?.data?.length)
   )
   const translateY = Math.max((itemHeight + columnGap) * startIndex, columnGap);
 
