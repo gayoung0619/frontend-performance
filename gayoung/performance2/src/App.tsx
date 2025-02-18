@@ -1,4 +1,3 @@
-import image from './assets/image.jpg';
 import './App.css';
 import LazyImage from "./components/lazylmage.tsx";
 

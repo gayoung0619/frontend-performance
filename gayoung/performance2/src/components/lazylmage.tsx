@@ -1,14 +1,16 @@
 import React, {useEffect, useRef, useState} from "react";
 import NoImage from "../assets/noImage.jpg";
 interface ILazyImage {
-  isLCP: string,
-  src: string
+  isLCP: boolean;
+  src: string;
+  sizes?: string; // 'sizes' 속성 추가
+  alt?: string;
 }
 const LazyImage: React.FC<ILazyImage> = ({src, isLCP}) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const imgRef = useRef<HTMLImageElement>(null);
-  const observer = useRef<IntersectionObserver>();
+  const observer = useRef<IntersectionObserver>(null);
 
   useEffect(() => {
     observer.current = new IntersectionObserver(intersectionOberserver)
