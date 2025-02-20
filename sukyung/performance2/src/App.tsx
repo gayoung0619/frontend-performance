@@ -1,12 +1,14 @@
-import image from './assets/image.webp';
 import './App.css';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Images from './assets/Images';
 
 function App() {
-  const images = Array.from({ length: 100 }, (_, index) => (
-    <img key={index} src={image} width="100%" loading="lazy" />
-  ));
-
-  return <div className="image-grid">{images}</div>;
+  const queryClient = new QueryClient();
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Images />
+    </QueryClientProvider>
+  );
 }
 
 export default App;
