@@ -3,8 +3,6 @@ import NoImage from "../assets/noImage.jpg";
 interface ILazyImage {
   isLCP: boolean;
   src: string;
-  sizes?: string; // 'sizes' 속성 추가
-  alt?: string;
 }
 const LazyImage: React.FC<ILazyImage> = ({src, isLCP}) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -14,13 +12,19 @@ const LazyImage: React.FC<ILazyImage> = ({src, isLCP}) => {
 
   useEffect(() => {
     observer.current = new IntersectionObserver(intersectionOberserver)
+    // imgRef.current가 존재하면 observe를 호출하여 해당 이미지 요소를 감시
     imgRef.current && observer.current.observe(imgRef.current)
   }, []);
 
   const intersectionOberserver = (entries: IntersectionObserverEntry[], io: IntersectionObserver) => {
+    // entries -> 감시중인 요소들의 상태 정보를 담은 배열
+    // io -> observer.current를의미
     entries.forEach((entry) => {
+      // 요소가 화면에 들어왔다?
       if (entry.isIntersecting) {
+        // 감시 해재
         io.unobserve(entry.target);
+        // 실제 이미지를 로드
         setIsLoading(true);
       }
     })
