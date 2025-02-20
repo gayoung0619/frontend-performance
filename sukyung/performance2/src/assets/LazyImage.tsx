@@ -36,7 +36,7 @@ const LazyImage = ({ url, author }: LazyImageProps) => {
 
   return (
     <div ref={imgRef} className="w-[500px] h-[500px]">
-      {!imageLoaded && (
+      {/* {!imageLoaded && (
         <div
           role="status"
           className="space-y-8 w-full h-full animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center"
@@ -53,7 +53,7 @@ const LazyImage = ({ url, author }: LazyImageProps) => {
             </svg>
           </div>
         </div>
-      )}
+      )} */}
       {isVisible && (
         <img
           src={url}
