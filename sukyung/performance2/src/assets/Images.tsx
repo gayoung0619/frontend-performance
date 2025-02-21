@@ -22,8 +22,10 @@ const Images = () => {
 
   if (!data) return;
 
+  console.log(data);
+
   return (
-    <div className="flex flex-wrap gap-[5px]">
+    <div className="w-full">
       {data.map((image: LargeImgType) => (
         <LazyImage
           key={image.id}
