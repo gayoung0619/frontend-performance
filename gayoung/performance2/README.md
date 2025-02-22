@@ -31,7 +31,7 @@
 
 ## 🛠️성능 측정
 
-<div style="gap: 10px;">
+<div style="gap: 10px;display: flex">
   <img src="./src/assets/readme/개선전.png" alt="개선 전" style="width: 49%" />
   <img src="./src/assets/readme/개선후.jpg" alt="개선 전" style="width: 49%" />
 </div>
