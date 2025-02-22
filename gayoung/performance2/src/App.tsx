@@ -7,7 +7,6 @@ function App() {
       <LazyImage
           key={index}
           src={`https://picsum.photos/id/${index}/800/600 800w, https://picsum.photos/id/${index}/400/300 400w`}
-          sizes="(max-width: 600px) 400px, 800px"
           isLCP={index === 0}
       />
   ));
