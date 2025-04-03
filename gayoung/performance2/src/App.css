@@ -2,3 +2,8 @@ body, div, img {
   margin: 0;
   padding: 0;
 }
+
+img{
+  display: block;
+  margin-top: 10px;
+}
