@@ -27,4 +27,5 @@
 ## 📂 프로젝트 리스트
 
 - performance1 : 가상스크롤 (virtual-scroll)
-- performance2 : 이미지 Lazyloading
+- performance2 : 이미지 (Lazy-loading)
+- performance3 : 코드 스플리팅 (Code Splitting)
