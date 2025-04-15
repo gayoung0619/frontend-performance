@@ -1,35 +1,69 @@
-import React, { useState, useMemo, useCallback, memo } from "react";
+import React, { useState, useCallback, memo } from "react";
 
-const Child = ({ value, onClick }) => {
-  console.log("🔁 Child 렌더링");
+// 메모이제이션 없는 자식
+function NonMemoizedItem({ item, onToggle }) {
+  console.log(`🔁 NonMemoizedItem 렌더링: ${item.name}`);
   return (
     <div>
-      <p>값: {value}</p>
-      <button onClick={onClick}>자식 버튼</button>
+      <span>{item.name}</span>
+      <button onClick={() => onToggle(item.id)}>
+        {item.favorite ? "★" : "☆"}
+      </button>
     </div>
   );
 }
 
+// 메모이제이션 된 자식
+const MemoizedItem = memo(function MemoizedItem({ item, onToggle }) {
+  console.log(`✅ MemoizedItem 렌더링: ${item.name}`);
+  return (
+    <div>
+      <span>{item.name}</span>
+      <button onClick={() => onToggle(item.id)}>
+        {item.favorite ? "★" : "☆"}
+      </button>
+    </div>
+  );
+});
+
 export default function App() {
-  const [count, setCount] = useState(0);
-  const [text, setText] = useState("");
+  const initialItems = [
+    { id: 1, name: "Apple", favorite: false },
+    { id: 2, name: "Banana", favorite: false },
+    { id: 3, name: "Cherry", favorite: false },
+  ];
 
-  const computedValue = count * 2;
+  const [items, setItems] = useState(initialItems);
+  const [filter, setFilter] = useState("");
 
-  const handleClick = () => console.log("Clicked");
-
+  // ✅ useCallback으로 함수 메모이제이션
+  const toggleFavorite = useCallback((id) => {
+    setItems((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, favorite: !item.favorite } : item
+      )
+    );
+  }, []);
 
   return (
     <div>
-      <h1>🔄 부모 컴포넌트</h1>
-      <button onClick={() => setCount((c) => c + 1)}>카운트 증가</button>
+      <h1>상품 리스트</h1>
       <input
         type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="텍스트 입력"
+        value={filter}
+        placeholder="필터링용 텍스트"
+        onChange={(e) => setFilter(e.target.value)}
       />
-      <Child value={computedValue} onClick={handleClick} />
+
+      <h2>✅ 메모이제이션 된 컴포넌트</h2>
+      {items.map((item) => (
+        <MemoizedItem key={item.id} item={item} onToggle={toggleFavorite} />
+      ))}
+
+      <h2>❌ 메모이제이션 없는 컴포넌트</h2>
+      {items.map((item) => (
+        <NonMemoizedItem key={item.id} item={item} onToggle={toggleFavorite} />
+      ))}
     </div>
   );
 }
