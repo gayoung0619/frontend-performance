@@ -26,10 +26,21 @@ const MemoizedItem = memo(function MemoizedItem({ item, onToggle }) {
   );
 });
 
+const InputItem = ({filter, setFilter}) => {
+  return (
+    <input
+      type="text"
+      value={filter}
+      placeholder="필터링용 텍스트"
+      onChange={(e) => setFilter(e.target.value)}
+    />
+  )
+}
+
 export default function App() {
   const initialItems = [
-    { id: 1, name: "Apple", favorite: false },
-    { id: 2, name: "Banana", favorite: false },
+    {id: 1, name: "Apple", favorite: false},
+    {id: 2, name: "Banana", favorite: false },
     { id: 3, name: "Cherry", favorite: false },
   ];
 
@@ -37,23 +48,19 @@ export default function App() {
   const [filter, setFilter] = useState("");
 
   // ✅ useCallback으로 함수 메모이제이션
-  const toggleFavorite = useCallback((id) => {
+  const toggleFavorite = (id) => {
     setItems((prev) =>
       prev.map((item) =>
         item.id === id ? { ...item, favorite: !item.favorite } : item
       )
     );
-  }, []);
+  }
 
   return (
     <div>
       <h1>상품 리스트</h1>
-      <input
-        type="text"
-        value={filter}
-        placeholder="필터링용 텍스트"
-        onChange={(e) => setFilter(e.target.value)}
-      />
+
+      <InputItem filter={filter} setFilter={setFilter}></InputItem>
 
       <h2>✅ 메모이제이션 된 컴포넌트</h2>
       {items.map((item) => (
