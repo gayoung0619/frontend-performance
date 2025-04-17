@@ -48,13 +48,13 @@ export default function App() {
   const [filter, setFilter] = useState("");
 
   // ✅ useCallback으로 함수 메모이제이션
-  const toggleFavorite = (id) => {
+  const toggleFavorite = useCallback((id) => {
     setItems((prev) =>
       prev.map((item) =>
         item.id === id ? { ...item, favorite: !item.favorite } : item
       )
     );
-  }
+  }, [])
 
   return (
     <div>
