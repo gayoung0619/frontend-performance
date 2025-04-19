@@ -29,3 +29,4 @@
 - performance1 : 가상스크롤 (virtual-scroll)
 - performance2 : 이미지 (Lazy-loading)
 - performance3 : 코드 스플리팅 (Code Splitting)
+- performance4 : 리액트 메모이제이션
